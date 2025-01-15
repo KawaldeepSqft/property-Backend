@@ -1,0 +1,36 @@
+{
+  "name": "square-feet-prop",
+  "version": "1.0.0",
+  "main": "app.js",
+  "type": "module",
+  "scripts": {
+    "client-install": "npm install --prefix frontend",
+    "client-build": "npm run build --prefix frontend",
+    "build": "npm run build --prefix frontend && node ./Backend/app.js",
+    "start": "node ./Backend/app.js",
+    "dev": "nodemon ./Backend/app.js -e js"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "body-parser": "^1.20.3",
+    "bun": "^1.1.27",
+    "cloudinary": "^2.5.0",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.20.0",
+    "express-fileupload": "^1.5.1",
+    "express-validator": "^7.2.0",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.6.1",
+    "node-cron": "^3.0.3",
+    "nodemailer": "^6.9.15",
+    "to-words": "^4.2.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.4"
+  }
+}
