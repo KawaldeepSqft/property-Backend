@@ -32,5 +32,5 @@ jobs:
           fi
       - name: Run Docker Container
         run: |
-          sudo docker run -d -p 3500:3500 --name propertydekho247-property-backend-container \
+          sudo docker run -d -p 5000:5000 --name propertydekho247-property-backend-container \
           -e MONGO_PASSWORD='${{ secrets.MONGO_PASSWORD }}' propertydekho247/property-backend
