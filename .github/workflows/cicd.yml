@@ -1,6 +1,5 @@
 name: Deploy property-backend
 
-
 on: 
   push:
     branches:
@@ -12,24 +11,26 @@ jobs:
     steps:
       - name: Checkout Source
         uses: actions/checkout@v4
-      - name: Login to docker hub
+      - name: Login to Docker Hub
         run: docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}     
       - name: Build Docker Image
-        run: docker build -t propertydekho247/property-backend  .
-      - name: Publish Image to docker hub
-        run: docker push propertydekho247/property-backend:latest 
- 
- 
+        run: docker build -t propertydekho247/property-backend .
+      - name: Publish Image to Docker Hub
+        run: docker push propertydekho247/property-backend:latest
+
   deploy:
     needs: build
-    runs-on: self-hosted 
+    runs-on: self-hosted  # Ensure this runner has Docker access permissions
     steps:
-      - name: Pull image from docker hub
-        run: docker pull propertydekho247/property-backend:latest
+      - name: Pull image from Docker Hub
+        run: |
+          sudo docker pull propertydekho247/property-backend:latest
       - name: Delete old container
         run: |
-              if [ "$(docker ps -aq -f name=propertydekho247-property-backend-container)" ]; then
-                docker rm -f propertydekho247-property-backend-container
-              fi
+          if [ "$(sudo docker ps -aq -f name=propertydekho247-property-backend-container)" ]; then
+            sudo docker rm -f propertydekho247-property-backend-container
+          fi
       - name: Run Docker Container
-        run: docker run -d -p 3500:3500 --name propertydekho247-property-backend-container -e MONGO_PASSWORD='${{ secrets.MONGO_PASSWORD }}' propertydekho247/property-backend
+        run: |
+          sudo docker run -d -p 3500:3500 --name propertydekho247-property-backend-container \
+          -e MONGO_PASSWORD='${{ secrets.MONGO_PASSWORD }}' propertydekho247/property-backend
