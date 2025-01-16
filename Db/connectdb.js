@@ -6,7 +6,7 @@ const ConnectDb = async () => {
   
     mongoose.set("strictQuery", true);
 
-    await mongoose.connect(connectionUri);
+    await mongoose.connect(connectionUri||"mongodb+srv://kawaldeep8395:0bH8zxmTjrjPPXPU@newproject.jhcy4.mongodb.net/PropertyData");
     console.log("Database Connect Successfully");
   } catch (error) {
     console.log(error);
