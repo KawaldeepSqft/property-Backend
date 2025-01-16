@@ -59,7 +59,7 @@ process.on("uncaughtException", (err) => {
 
 
 app.use(cors({
-  origin:"http://13.234.67.84:3000",
+  origin:"http://13.234.67.84:3000/",
   credentials:true,
   optionsSuccessStatus:200,
 }))
@@ -97,7 +97,8 @@ app.get("*", function (req, res) {
 // ;C:\Users\hii\Desktop\Amit\PropertyProject-master\frontend\public\index.html
 
 // server listen
-const port = process.env.PORT;
+// const port = process.env.PORT;
+const port = process.env.PORT || 5000;
 let server = app.listen(port);
 
 
