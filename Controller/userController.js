@@ -462,3 +462,7 @@ if(data){
     return SendError(res,500,message,null,err)
   }
 }
+
+export const data=async(req,res)=>{
+  res.send("hello i am start")
+}

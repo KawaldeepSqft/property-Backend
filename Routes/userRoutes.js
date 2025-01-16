@@ -8,6 +8,7 @@ import {
   CompleteUserProfile,
   editProfile,
   updateProfile,
+  data,
   // SendSMS
 } from "../Controller/userController.js";
 import { checkFieldError } from "../Middelware/checkFielderror.js";
@@ -74,5 +75,11 @@ Routes.put(
 // Routes.post("/sms",  SendSMS)
 
 Routes.post("/report", UserAuthenticate, reportFormRequest);
+
+Routes.get("/alldata",data)
+    
+
+
+
 
 export default Routes;
