@@ -7,8 +7,8 @@
     "client-install": "npm install --prefix frontend",
     "client-build": "npm run build --prefix frontend",
     "build": "npm run build --prefix frontend && node ./Backend/app.js",
-    "start": "node ./Backend/app.js",
-    "dev": "nodemon ./Backend/app.js -e js"
+    "start": "node app.js",
+    "dev": "nodemon app.js -e js"
   },
   "author": "",
   "license": "ISC",
