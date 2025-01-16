@@ -58,11 +58,7 @@ process.on("uncaughtException", (err) => {
 // }
 
 
-app.use(cors({
-  origin:"http://13.234.67.84:3000/",
-  credentials:true,
-  optionsSuccessStatus:200,
-}))
+app.use(cors())
 // Connect Data Base
 ConnectDb();
 
