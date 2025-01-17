@@ -84,7 +84,7 @@ app.get("*", function (req, res) {
 
 // server listen
 // const port = process.env.PORT;
-const port = process.env.PORT || 5000;
+const port = process.env.PORT ;
 let server = app.listen(port);
 
 
