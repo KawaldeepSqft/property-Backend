@@ -11,8 +11,8 @@ WORKDIR /app
 # Define build argument for the PORT
 ARG PORT
 
-# Write the environment variable to a .env file
-RUN echo "PORT" > .env
+# Write the actual value of the PORT build argument to the .env file
+RUN echo "PORT=$PORT" > .env
 
 
 # Copy package.json and install dependencies
