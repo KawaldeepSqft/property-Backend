@@ -24,11 +24,7 @@ import 'dotenv/config'
 // import bodyParser  from 'body-parser';
 const app = express();
 
-//  Add env file
-// if (process.env.PRODUCTION !== true) {
-//   const envFilepath = join(process.cwd(), "Backend", "Config", ".env");
-//   dotenv.config({ path: envFilepath });
-// }
+
 if (process.env.PRODUCTION !== true) {
 dotenv.config({ path: path.resolve('config', '.env') });
 }
@@ -46,20 +42,10 @@ process.on("uncaughtException", (err) => {
   process.exit(1);
 });
 
-// Set up Cors
-// if (process.env.PRODUCTION !== true) {
-//   app.use(
-//     cors({
-//       origin: process.env.FRONTENT_SIDE_URL,
-//       credentials: true,
-//       optionsSuccessStatus: 200,
-//     })
-//   );
-// }
 
-
+// cors allowed two origin
 app.use(cors({
-  origin:"http://localhost:3000",
+  origin:["http://localhost:3000","http://13.234.67.84:3000"],
   credentials:true,
   optionsSuccessStatus:200,
 }))
