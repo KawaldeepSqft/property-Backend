@@ -49,13 +49,8 @@ process.on("uncaughtException", (err) => {
   // credentials:true,
   // optionsSuccessStatus:200,
 // }))
-app.use(cors(
-  {
-    origin:["http://localhost:3000","http://13.234.67.84:3000","http://www.propbidding.in","https://www.propbidding.in"],
-    credentials:true,
-    optionsSuccessStatus:200,
-  }
-))
+
+app.options('*', cors());
 // Connect Data Base
 ConnectDb();
 
