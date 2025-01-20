@@ -45,11 +45,17 @@ process.on("uncaughtException", (err) => {
 
 // cors allowed two origin
 // app.use(cors({
-//   origin:["http://localhost:3000","http://13.234.67.84:3000","http://www.propbidding.in","https://www.propbidding.in"],
-//   credentials:true,
-//   optionsSuccessStatus:200,
+  // origin:["http://localhost:3000","http://13.234.67.84:3000","http://www.propbidding.in","https://www.propbidding.in"],
+  // credentials:true,
+  // optionsSuccessStatus:200,
 // }))
-app.use(cors())
+app.use(cors(
+  {
+    origin:["http://localhost:3000","http://13.234.67.84:3000","http://www.propbidding.in","https://www.propbidding.in"],
+    credentials:true,
+    optionsSuccessStatus:200,
+  }
+))
 // Connect Data Base
 ConnectDb();
 
