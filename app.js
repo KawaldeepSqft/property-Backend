@@ -56,6 +56,8 @@ app.use(cors({
     "http://localhost:3000", 
     "http://13.234.67.84:3000", 
     "http://www.propbidding.in", 
+    "https://propbidding.in", 
+    "http://propbidding.in", 
     "https://www.propbidding.in"
   ],
   credentials: true,
