@@ -50,6 +50,19 @@ process.on("uncaughtException", (err) => {
   // optionsSuccessStatus:200,
 // }))
 
+// CORS Middleware - Ensure this is placed before route definitions
+app.use(cors({
+  origin: [
+    "http://localhost:3000", 
+    "http://13.234.67.84:3000", 
+    "http://www.propbidding.in", 
+    "https://www.propbidding.in"
+  ],
+  credentials: true,
+  optionsSuccessStatus: 200,
+}));
+
+// Handle OPTIONS preflight requests
 app.options('*', cors());
 // Connect Data Base
 ConnectDb();
