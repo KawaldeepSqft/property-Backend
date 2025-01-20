@@ -101,7 +101,7 @@ app.use("/admin-owner", AdminAndOwnerRoutes);
 
 // server listen
 // const port = process.env.PORT;
-const port = process.env.PORT ;
+const port = process.env.PORT||5000 ;
 let server = app.listen(port);
 
 
