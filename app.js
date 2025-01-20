@@ -91,7 +91,7 @@ app.use("/notify", NotifyRoutes);
 app.use("/admin-owner", AdminAndOwnerRoutes);
 
 
-app.use(express.static(join(process.cwd(), "frontend", "build")));
+// app.use(express.static(join(process.cwd(), "frontend", "build")));
 // app.get("*", function (req, res) {
 //   res.sendFile(join(process.cwd(), "frontend", "build", "index.html"));
 // });
