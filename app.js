@@ -11,6 +11,7 @@ import TenantPostResponseRoutes from "./Routes/TenantPostResponseRoutes.js";
 import initializeCrons from "./Utils/Crons.js";
 import NotifyRoutes from "./Routes/NotifyRoutes.js";
 // import FavouritePostRoutes from './Routes/FavouritePostRoutes.js';
+import morgan from 'morgan';
 
 import { join } from "path";
 import dotenv from 'dotenv';
@@ -30,7 +31,7 @@ dotenv.config({ path: path.resolve('config', '.env') });
 }
 
 app.use(fileUpload({ useTempFiles: true }));
-
+app.use(morgan('dev'));
 // Add cloudinary
 cloudinary.config({
   cloud_name: process.env.CLOUDINARY_NAME,
