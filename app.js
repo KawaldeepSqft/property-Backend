@@ -80,20 +80,20 @@ app.use(express.json());
 app.use(cookieParser());
 
 // Application Routes
-app.use("/user", userRoutes);
-app.use("/post", postRoutes);
+// app.use("/user", userRoutes);
+// app.use("/post", postRoutes);
 
-app.use("/expression-of-interest", ExpressionOfInterestRoutes);
-app.use("/Biddingform", BiddingFormRoutes);
-app.use("/schedule-visit", ScheduleVisitRoutes);
-app.use("/property-requirement", PostPropertyRequirementRoutes);
-app.use("/channel-partner", ChannelPartnerRoutes);
-app.use("/tenant-post-response", TenantPostResponseRoutes);
-app.use("/notify", NotifyRoutes);
+// app.use("/expression-of-interest", ExpressionOfInterestRoutes);
+// app.use("/Biddingform", BiddingFormRoutes);
+// app.use("/schedule-visit", ScheduleVisitRoutes);
+// app.use("/property-requirement", PostPropertyRequirementRoutes);
+// app.use("/channel-partner", ChannelPartnerRoutes);
+// app.use("/tenant-post-response", TenantPostResponseRoutes);
+// app.use("/notify", NotifyRoutes);
 // app.use('/favourite-post' ,FavouritePostRoutes)
 
 // Admin Owner
-app.use("/admin-owner", AdminAndOwnerRoutes);
+// app.use("/admin-owner", AdminAndOwnerRoutes);
 
 
 // app.use(express.static(join(process.cwd(), "frontend", "build")));
