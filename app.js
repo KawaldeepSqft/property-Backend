@@ -56,7 +56,7 @@ app.use(bodyParser.json());
 
 // Handle OPTIONS preflight requests
 // API endpoint
-app.get('/user/alldata', async (req, res) => {
+app.get('/res', async (req, res) => {
   try {
     // Simulating data retrieval from a database (replace with your actual logic)
     const allData = await getAllUserData(); // Assume this function fetches data
