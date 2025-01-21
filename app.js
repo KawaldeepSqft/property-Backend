@@ -41,7 +41,7 @@ cloudinary.config({
 process.on("uncaughtException", (err) => {
   process.exit(1);
 });
-
+ConnectDb();
 
 // cors allowed two origin
 // app.use(cors({
@@ -67,7 +67,12 @@ app.use(cors({
 // Handle OPTIONS preflight requests
 app.options('*', cors());
 // Connect Data Base
-ConnectDb();
+app.get('/user/alldata', (req, res) => {
+  // Your logic to fetch data
+  const data = { message: "This is the data" };
+  res.json(data);  // Send response as JSON
+});
+
 
 // // response send to json()
 // app.use(bodyParser.urlencoded({ extended: true }));

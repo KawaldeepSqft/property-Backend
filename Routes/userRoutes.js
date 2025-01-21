@@ -76,7 +76,7 @@ Routes.put(
 
 Routes.post("/report", UserAuthenticate, reportFormRequest);
 
-Routes.get("/alldata",data)
+// Routes.get("/alldata",data)
     
 
 
