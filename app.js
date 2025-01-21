@@ -52,18 +52,7 @@ ConnectDb();
 // }))
 
 // CORS Middleware - Ensure this is placed before route definitions
-app.use(cors({
-  origin: [
-    "http://localhost:3000", 
-    "http://13.234.67.84:3000", 
-    "http://www.propbidding.in", 
-    "https://propbidding.in", 
-    "http://propbidding.in", 
-    "https://www.propbidding.in"
-  ],
-  credentials: true,
-  optionsSuccessStatus: 200,
-}));
+app.use(cors());
 
 // Handle OPTIONS preflight requests
 app.options('*', cors());
