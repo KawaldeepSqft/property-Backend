@@ -50,23 +50,28 @@ ConnectDb();
   // credentials:true,
   // optionsSuccessStatus:200,
 // }))
-
-// CORS Middleware - Ensure this is placed before route definitions
-app.use(cors());
+// Middleware setup
+app.use(cors()); // Enable CORS if needed
+app.use(bodyParser.json()); 
 
 // Handle OPTIONS preflight requests
-app.options('*', cors());
-// Connect Data Base
-app.get('/user/alldata', (req, res) => {
-  res.setHeader('Content-Type', 'application/json');
-  res.json({ message: 'Data found' });
+// API endpoint
+app.get('/user/alldata', async (req, res) => {
+  try {
+    // Simulating data retrieval from a database (replace with your actual logic)
+    const allData = await getAllUserData(); // Assume this function fetches data
+    res.status(200).json(allData); // Ensure the response is JSON
+  } catch (error) {
+    console.error('Error fetching data:', error);
+    res.status(500).json({ error: 'Internal Server Error' });
+  }
 });
 
 
 // // response send to json()
 // app.use(bodyParser.urlencoded({ extended: true }));
-app.use(express.json());
-app.use(cookieParser());
+
+// app.use(cookieParser());
 
 // Application Routes
 // app.use("/user", userRoutes);
