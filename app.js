@@ -68,9 +68,8 @@ app.use(cors({
 app.options('*', cors());
 // Connect Data Base
 app.get('/user/alldata', (req, res) => {
-  // Your logic to fetch data
-  const data = { message: "This is the data" };
-  res.json(data);  // Send response as JSON
+  res.setHeader('Content-Type', 'application/json');
+  res.json({ message: 'Data found' });
 });
 
 
